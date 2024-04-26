@@ -8,21 +8,21 @@ import { type Chain } from '@wagmi/chains';
 
 //New chain
 
-const incoChain: Chain = {
- id: 9090,
- network: "Inco Network",
- name: "Inco",
+const redStone: Chain = {
+ id: 17001,
+ network: "Red Stone Network",
+ name: "RED",
  nativeCurrency: {
-     name: "IncoEther",
-     symbol: "INCO",
+     name: "Red Stone",
+     symbol: "RED",
      decimals: 18,
   },
  rpcUrls: {
      default: {
-         http: ["https://testnet.inco.org/"],
+         http: ["https://rpc.holesky.redstone.xyz/"],
       },
      public: {
-         http: ["https://testnet.inco.org"],
+         http: ["https://rpc.holesky.redstone.xyz/"],
       },
   },
  blockExplorers: {
@@ -65,7 +65,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             accentColor: '#676FFF',
             logo: 'https://your-logo-url',
           },
-          supportedChains: [incoChain],
+          supportedChains: [redStone],
         }}>
   <React.StrictMode>
     <App />
