@@ -8,8 +8,8 @@ on the inco chain.
 
 pragma solidity >=0.8.13 <0.9.0;
 
-import "fhevm/abstracts/EIP712WithModifier.sol";
-import "fhevm/lib/TFHE.sol";
+import "../lib/fhevm/abstracts/EIP712WithModifier.sol";
+import "../lib/fhevm/lib/TFHE.sol";
 
 interface IInterchainExecuteRouter {
     function getRemoteInterchainAccount(uint32 _destination, address _owner)
@@ -73,8 +73,8 @@ contract RandomNumberGenerator is EIP712WithModifier, IRandomNumberGenerator {
                                 Constructor
     //////////////////////////////////////////////////////////////*/
 
-    constructor(address _owner) EIP712WithModifier("Authorization token", "1") {
-        i_owner = _owner;
+    constructor() EIP712WithModifier("Authorization token", "1") {
+        i_owner = msg.sender;
     }
 
     /*//////////////////////////////////////////////////////////////
