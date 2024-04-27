@@ -1,96 +1,66 @@
-# IncoSlots
-![IncoSlots](./public/telegram_banner.jpg)
+## Foundry
 
-A simple slot machine game running on Telegram. It demonstrates Inco's on-chain randomness and utilizes Privy for embedded wallet creation.
-You can test your luck by playing the demo version of the game here:
-https://t.me/inco_slots_demo_bot?game=slots
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-Written with React + Svelte.
+Foundry consists of:
 
-# Dependencies
-The project uses the following dependencies:
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-- [@privy-io/react-auth](https://www.npmjs.com/package/@privy-io/react-auth) for the Privy overlay
-- [@twa-dev/sdk](https://www.npmjs.com/package/@twa-dev/sdk) for Telegram Web API
+## Documentation
 
-# How it works
-The game is written using two frameworks:
-- React for the Privy overlay.
-- Svelte for the game UI.
+https://book.getfoundry.sh/
 
-App.tsx is managing state, using Privy hooks, connects to Inco and sends transactions, makes calls to faucet, etc.
-SlotMachine.svelte is rendering the game graphics and animations.
+## Usage
 
-# How to run locally
-## Frontend
-First, install cloudflared:
-```bash
-npm i -g cloudflared
-```
-Then run:
-```bash
-cloudflared tunnel --url http://localhost:5173
-```
-This will give you a temporary URL pointing to your local server, hold on to it for now and keep the terminal window open.
+### Build
 
-To run the project locally, run the following commands:
-```bash
-npm install
-npm start
+```shell
+$ forge build
 ```
 
-## Setup the telegram bot
-Open telegram and search for the BotFather and initiate chat with it. Create a new bot:
-```
-[You] - Accept
+### Test
 
-[You] - /newbot
-... complete the steps until BotFather responds with the following:
-[BotFather] - Done! Congratulations on your new bot. You will find it at t.me/<Bot Username>. 
-
-Then do the following:
-/mybots
-... BotFather will respond with a list of all your bots.
-Choose your newly created bot then press
-Bot Settings -> Menu Button -> Edit Menu Button URL
-
-Now respond with the URL provided to you by cloudflared.
-```
-Your bot should now be playable. Go to your bot, press "start" and play the game.
-
-
-# How to deploy
-## Frontend
-This project is deployed on GitHub Pages. To deploy, install github CLI
-```bash
-npm install -g gh
-```
-Then run
-
-```bash
-npm run deploy
+```shell
+$ forge test
 ```
 
-Go to your github repository settings and enable GitHub Pages. Set the source to gh-pages branch.
-Your game should now be live at https://<username>.github.io/<repo-name>
+### Format
 
-
-## Setup the telegram bot
-Open telegram and search for the BotFather and initiate chat with it. Create a new bot:
+```shell
+$ forge fmt
 ```
-[You] - Accept
 
-[You] - /newbot
-... complete the steps until BotFather responds with the following:
-[BotFather] - Done! Congratulations on your new bot. You will find it at t.me/<Bot Username>. 
+### Gas Snapshots
 
-Then do the following:
-/mybots
-... BotFather will respond with a list of all your bots.
-Choose your newly created bot then press
-Bot Settings -> Menu Button -> Edit Menu Button URL
-
-Now respond with the URL pointing to your repos github page https://<username>.github.io/<repo-name>.
+```shell
+$ forge snapshot
 ```
-Your bot should now be playable. Go to your bot, press "start" and play the game.
 
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
