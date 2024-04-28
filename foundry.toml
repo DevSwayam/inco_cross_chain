@@ -8,5 +8,9 @@ remappings = [
    "@openzeppelin/contracts=lib/openzeppelin-contracts/contracts"
 ]
 
+[rpc_endpoints]
+inco_network = "${INCO_RPC_URL}"
+redstone_network = "${REDSTONE_RPC_URL}" 
+
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
