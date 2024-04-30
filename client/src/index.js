@@ -43,7 +43,7 @@ const handleLogin = (user) => {
 //eruda.init();
 
 
-let loginMethods = ["sms", "email", "discord"];
+let loginMethods = ['email', 'wallet', 'google', 'apple', 'farcaster'];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,7 +53,7 @@ root.render(
       appId="cltn4pfm807ld12sf83bqr3iy"
       config={{
         // Display email and wallet as login methods
-        loginMethods: ["email", "wallet"],
+        loginMethods: ['email', 'wallet', 'google', 'apple', 'farcaster'],
         // Customize Privy's appearance in your app
         appearance: {
           theme: "light",
